@@ -5,8 +5,8 @@ export DOCKER_RUN_OPTS=
 # IP address of current host.
 export HOSTIP=$(/sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}')
 
-export HOST_DATA_DIR_PREFIX="/var/lib/electrum-server-docker"
-export HOST_BITCOIND_DATA_DIR="$HOST_DATA_DIR_PREFIX/bitcoind"
+export HOST_DATA_DIR_PREFIX="/home"
+export HOST_BITCOIND_DATA_DIR="$HOST_DATA_DIR_PREFIX/bitcoin-data"
 export HOST_ELECTRUM_DATA_DIR="$HOST_DATA_DIR_PREFIX/electrum/data"
 export HOST_ELECTRUM_LEVELDB_DIR="$HOST_DATA_DIR_PREFIX/electrum/leveldb"
 export HOST_ELECTRUM_CERT_DIR="$HOST_DATA_DIR_PREFIX/electrum/cert"
@@ -25,7 +25,7 @@ export BITCOIND_RPC_USER=
 export BITCOIND_RPC_PASSWORD=
 export BITCOIND_CONFIG=
 
-export BITCOIND_NODE_CONTAINER_NAME=bitcoind-node
+export BITCOIND_NODE_CONTAINER_NAME=nostalgic_fermat
 export BITCOIND_RPC_CONTAINER_NAME=bitcoind-rpc
 export ELECTRUM_SERVER_CONTAINER_NAME=electrum-server
 export ELECTRUM_CONFIG=

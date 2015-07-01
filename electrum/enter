@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 set -e
 
 if [ "$1" = "" ]; then
@@ -13,7 +14,7 @@ EOF
     exit 1
 fi
 
-cd /electrum
+cd /home/electrum
 
 # expand environment in electrum.conf template
 mv electrum.conf electrum.conf.template
@@ -22,7 +23,7 @@ cp electrum.banner /etc/electrum.banner
 
 if [ "$1" == "serve" ]; then
     set -x
-    electrum-server
+    electrum-server start
 else
     echo $@ | exec bash
 fi
